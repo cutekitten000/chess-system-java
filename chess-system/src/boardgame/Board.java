@@ -1,6 +1,7 @@
 package boardgame;
 
 public class Board {
+
     private int rows;
     private int columns;
     private Piece[][] pieces;
@@ -51,14 +52,13 @@ public class Board {
         if (piece(position) == null) {
             return null;
         }
-
         Piece aux = piece(position);
         aux.position = null;
         pieces[position.getRow()][position.getColumn()] = null;
         return aux;
     }
 
-    public boolean positionExists(int row, int column) {
+    private boolean positionExists(int row, int column) {
         return row >= 0 && row < rows && column >= 0 && column < columns;
     }
 
